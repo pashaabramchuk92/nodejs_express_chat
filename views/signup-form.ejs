@@ -1,0 +1,36 @@
+<form class="app-form" action="/signup" method="post">
+    <fieldset class="app-form__field">
+        <label>Email</label>
+        <input type="text" name="email" />
+    </fieldset>
+
+    <fieldset class="app-form__field">
+        <label>Name</label>
+        <input type="text" name="name" />
+    </fieldset>
+
+    <fieldset class="app-form__field">
+        <label>Birthday</label>
+        <input type="date" name="birthday" />
+    </fieldset>
+
+    <fieldset class="app-form__field">
+        <label>Password</label>
+        <input type="password" name="password" />
+    </fieldset>
+
+    <fieldset class="app-form__field">
+        <label>Repeat password</label>
+        <input type="password" name="repeat_password" />
+    </fieldset>
+
+    <% if(error) { %>
+        <small>
+            <%= error %>
+        </small>
+    <% } %>
+
+    <button type="submit">
+        Sign Up
+    </button>
+</form>

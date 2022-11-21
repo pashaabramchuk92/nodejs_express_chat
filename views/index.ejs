@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/style.css">
+    <title>Online Chat | <%= page %></title>
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="app-header__tabs">
+                <h1 class="app-header__title">
+                    Express chat
+                </h1>
+
+                <a
+                    class="app-header__link <%= page === 'users' ? 'app-header__link--active' : '' %>"
+                    href="/users"
+                >
+                    Users list
+                </a>
+    
+                <a
+                    class="app-header__link <%= page === 'chats' ? 'app-header__link--active' : '' %>"
+                    href="/chats"
+                >
+                    Chats list
+                </a>
+            </div>
+        
+            <nav class="app-nav">
+                <% if (auth) { %>
+                    <%- include('shared/auth'); -%>
+                <% } else { %>
+                    <%- include('shared/not-auth'); -%>
+                <% } %>
+            </nav>
+        </header>
+
+        <main class="app-main">
+            <% if (page === 'login') { %>
+                <%- include('login-form'); -%>
+            <% } else if(page === 'signup') { %>
+                <%- include('signup-form'); -%>
+            <% } else if(page === 'users') { %>
+                <%- include('users'); -%>
+            <% } else if(page === 'user') { %>
+                <%- include('user'); -%>
+            <% } else if(page === 'chats') { %>
+                <%- include('chats'); -%>
+            <% } else if(page === 'chat') { %>
+                <%- include('chat'); -%>
+            <% } else { %>
+                <%- include('errors'); -%>
+            <% } %>
+        </main>
+    </div>
+</body>
+</html>

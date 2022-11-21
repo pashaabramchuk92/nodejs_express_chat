@@ -1,0 +1,21 @@
+<form class="app-form" action="/login" method="post">
+    <fieldset class="app-form__field">
+        <label>Email</label>
+        <input class="<%= error ? 'app-form__field-error' : '' %>" type="text" name="email" />
+    </fieldset>
+
+    <fieldset class="app-form__field">
+        <label>Password</label>
+        <input class="<%= error ? 'app-form__field-error' : '' %>" type="password" name="password" />
+    </fieldset>
+
+    <% if (error) { %>
+        <small>
+            Invalid password or email
+        </small>
+    <% } %>
+
+    <button type="submit">
+        Sign In
+    </button>
+</form>

@@ -1,0 +1,17 @@
+<% if (users) { %>
+    <ul class="app-users-list">
+        <% users.forEach((user) => { %>
+            <li class="app-users-list__item">
+                <a href="/users/<%= user.id %>" class="app-users-list__link">
+                    <%= user.email %>
+                </a>
+
+                <% if (auth) {%>
+                    <a href="/chats/<%= user.id %>" class="app-users-list__action">
+                        Start chat
+                    </a>
+                <% } %>
+            </li>
+        <% }); %>
+    </ul>
+<% } %>

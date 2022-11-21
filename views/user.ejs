@@ -1,0 +1,16 @@
+<div class="app-user">
+    <% if (user) {%>
+        <% Object.keys(user).forEach((key) => { %>
+            <% if (key === 'email' || key === 'birthday' || key === 'name') {%>
+                <p class="app-user-field">
+                    <span>
+                        <%= key %>:
+                    </span>
+                    <span>
+                        <%= user[key] %>
+                    </span>
+                </p>
+            <% } %>
+        <% }) %>
+    <% } %>
+</div>
